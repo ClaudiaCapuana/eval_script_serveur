@@ -1,4 +1,5 @@
- <div class="col-md-12 page-body margin-top-50 footer">
+  <!-- Footer Start -->
+            <div class="col-md-12 page-body margin-top-50 footer">
               <footer>
                 <ul class="menu-link">
                   <li><a href="index.html">My Blog</a></li>
@@ -14,3 +15,4 @@
                 <!-- UiPasta Credit End -->
               </footer>
             </div>
+            <!-- Footer End -->

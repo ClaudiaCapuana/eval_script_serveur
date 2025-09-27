@@ -1,4 +1,5 @@
- <div class="col-md-3">
+  <!-- About Me (Left Sidebar) Start -->
+          <div class="col-md-3">
             <div class="about-fixed">
               <div class="my-pic">
                 <a href="index.html"
@@ -47,3 +48,4 @@
               </div>
             </div>
           </div>
+          <!-- About Me (Left Sidebar) End -->

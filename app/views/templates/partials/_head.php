@@ -1,3 +1,4 @@
+  <head>
     <!-- Meta Tag -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +10,7 @@
     <meta name="url" content="http://www.yourdomainname.com" />
     <meta name="copyright" content="company name" />
     <meta name="robots" content="index,follow" />
-
+  <base href="<?php echo PUBLIC_BASE_URL; ?>">
     <title>DevBlog - Personal Blog Template</title>
 
     <!-- Favicon -->
@@ -38,3 +39,4 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+  </head>
