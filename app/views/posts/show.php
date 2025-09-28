@@ -84,7 +84,7 @@
 
                     <!-- Post Buttons -->
                     <div>
-                      <a href="form.html" type="button" class="btn btn-primary"
+                      <a href="?users=new" type="button" class="btn btn-primary"
                         >Edit Post</a
                       >
                       <a

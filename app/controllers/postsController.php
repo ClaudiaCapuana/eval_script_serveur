@@ -24,3 +24,12 @@ include '../app/views/posts/show.php';
 $content = ob_get_clean();
 
 }
+
+function addFormAction(){
+    global $title, $content;
+    $title = "Add a post";
+    ob_start();
+    include "../app/views/posts/addForm.php";
+    $content = ob_get_clean();
+
+}
