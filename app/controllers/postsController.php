@@ -33,3 +33,11 @@ function addFormAction(){
     $content = ob_get_clean();
 
 }
+
+function insertAction(PDO $conn, array $data){
+    include_once "../app/models/postsModel.php";
+    $reponse = PostsModel\insert($conn, $data);
+     header('location:' .PUBLIC_BASE_URL. 'posts');
+
+
+}

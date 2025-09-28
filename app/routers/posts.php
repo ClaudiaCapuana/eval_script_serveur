@@ -14,7 +14,11 @@ switch ($_GET['posts']) :
     PostsController\addFormAction();
         break;
    
-        default:
-        PostsController\indexAction($conn);
+        
+
+          case 'insert':
+           
+    \App\Controllers\PostsController\insertAction($conn, $_POST);
         break;
-    endswitch;
+
+ default: PostsController\indexAction($conn); break; endswitch;

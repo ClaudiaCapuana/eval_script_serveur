@@ -22,6 +22,15 @@ RewriteRule ^posts$ index.php?posts [L]
  RewriteRule ^posts/add/form.html$ index.php?posts=add-form [L]
 
 # RewriteRule ^posts/add/?$ index.php?posts=add-form [L]
+
+	# ROUTE D'AJOUT D'UN POST: INSERT
+	# 		PATTERN: /posts/add/insert.html
+	# 		CTRL: ???
+	# 		ACTION: ???
+	# 		PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
+    RewriteRule ^posts/add/insert.html$ index.php?posts=insert [L]
+
+
 			
 # ------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
