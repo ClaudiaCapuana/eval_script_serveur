@@ -18,12 +18,13 @@
                     <!-- Post Headline End -->
 
                     <!-- Form Start -->
-                    <form action="posts/add/insert.html" method="POST">
+                      <form action="" method="POST">
                       <div class="form-group">
                         <label for="title">Title</label>
                         <input
                           type="text"
                           name="title"
+                          value="<?php echo $post['title']?>"
                           id="title"
                           class="form-control"
                           placeholder="Enter your title here"
@@ -33,11 +34,12 @@
                         <label for="text">Text</label>
                         <textarea
                           id="text"
+                      
                           name="text"
                           class="form-control"
                           rows="5"
                           placeholder="Enter your text here"
-                        ></textarea>
+                        ><?php echo $post['text']?></textarea>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlFile1"> Image</label>
@@ -48,10 +50,11 @@
                         <textarea
                           id="quote"
                           name="quote"
+                        
                           class="form-control"
                           rows="5"
                           placeholder="Enter your quote here"
-                        ></textarea>
+                        ><?php echo $post['quote']?></textarea>
                       </div>
                       <div class="form-group">
                         <label for="text">Category</label>
@@ -60,11 +63,11 @@
                           name="category_id"
                           class="form-control"
                         >
-                          <option disabled selected>
+                          <option disabled>
                             Select your category
                           </option>
                           <?php foreach($categories as $category): ?>
-                            <option value="<?php echo $category['id']?>"><?php echo $category['name'] ?></option>
+                            <option value="<?php echo $category['id']?>"<?php echo ($category['id'] == $post['categoryId']) ? 'selected' : '' ?>><?php echo $category['name'] ?></option>
                          <?php endforeach;?>
                         </select>
                       </div>

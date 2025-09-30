@@ -5,8 +5,7 @@ use \PDO;
 
 
 function findAll(PDO $conn, int $limit = 10): array {
-    $sql = "
-        SELECT 
+    $sql = "SELECT 
             p.id AS postsId,
             p.title,
             p.text,
@@ -30,6 +29,7 @@ $sql = " SELECT
             p.id AS postsId,
             p.title,
             p.text,
+            p.quote,
             p.created_at,
             c.id AS categoryId,
             c.name AS categoryName

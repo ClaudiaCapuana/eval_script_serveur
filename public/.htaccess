@@ -28,10 +28,14 @@ RewriteRule ^posts$ index.php?posts [L]
 	# 		CTRL: ???
 	# 		ACTION: ???
 	# 		PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
-    RewriteRule ^posts/add/insert.html$ index.php?posts=insert [L]
+    RewriteRule ^posts/add/insert.html$ index.php?posts=insert  [L]
 
-
-			
+# ROUTE DE MODIFICATION D'UN POST: Affichage du formulaire
+# 			PATTERN: /posts/id/slug-du-post/edit/form.html
+# 			CTRL: ???
+# 			ACTION: ???
+# 			TITLE: Alex Parker - Edit a post
+	  RewriteRule ^posts/([0-9]+)/[a-z0-9-]+/edit/form.html$ index.php?posts=edit&id=$1 [L]		
 # ------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]
