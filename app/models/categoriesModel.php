@@ -10,13 +10,12 @@ function findAll(PDO $conn):array{
     return $rs->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function findCategoriesByPostsID(PDO $conn, int $postID):array{
-    $sql = "SELECT *, c.id AS categoryID
+function findAllWithTheirsPosts(PDO $conn):array{
+    $sql = "SELECT c.*, c.id AS categoryID, COUNT(p.id) AS postsCount
     FROM categories c 
     JOIN posts p ON c.id = p.category_id
-    WHERE p.id = :postID";
-    $rs = $conn->prepare($sql);
-    $rs->bindValue (':postID', $postID,PDO::PARAM_INT);
-    $rs->execute();
-    return $rs->fetchAll(PDO::FETCH_COLUMN);
+    GROUP BY c.id
+    ORDER BY c.name ASC";
+    $rs = $conn->query($sql);
+    return $rs->fetchAll(PDO::FETCH_ASSOC);
 }
