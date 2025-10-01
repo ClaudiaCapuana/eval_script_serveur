@@ -69,3 +69,10 @@ function updateAction(PDO $conn, int $id, array $data){
     $response = PostsModel\updateOneById($conn, $id, $data);
     header('Location: '.PUBLIC_BASE_URL.'posts/'.$id.'/'.\Core\Helpers\slugify($data['title']).'.html');
 }
+
+function deleteAction(PDO $conn, int $id){
+    include_once "../app/models/postsModel.php";
+    $response = PostsModel\deleteOneById($conn, $id);
+    header('Location:' .PUBLIC_BASE_URL. 'posts');
+
+}

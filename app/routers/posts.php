@@ -31,4 +31,10 @@ switch ($_GET['posts']) :
     \App\Controllers\PostsController\updateAction($conn,$_GET['id'],$_POST);
         break;
 
+
+     case 'delete':
+     \App\Controllers\PostsController\deleteAction($conn,$_GET['id']);
+     break;
+        
+
  default: PostsController\indexAction($conn); break; endswitch;

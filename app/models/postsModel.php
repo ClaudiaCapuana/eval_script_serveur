@@ -121,3 +121,10 @@ function updateOneById(PDO $conn, int $id, array $data): bool{
         $rs->bindValue(':category', $data['category_id'], PDO::PARAM_INT);
         return $rs->execute();
 }
+
+function deleteOneById(PDO $conn, int $id):bool{
+    $sql = "DELETE FROM posts WHERE id=:id";
+    $rs = $conn->prepare($sql);
+    $rs->bindValue(':id',$id,PDO::PARAM_INT);
+    return $rs->execute();
+}
