@@ -35,7 +35,17 @@ RewriteRule ^posts$ index.php?posts [L]
 # 			CTRL: ???
 # 			ACTION: ???
 # 			TITLE: Alex Parker - Edit a post
-	  RewriteRule ^posts/([0-9]+)/[a-z0-9-]+/edit/form.html$ index.php?posts=edit&id=$1 [L]		
+	  RewriteRule ^posts/([0-9]+)/[a-z0-9-]+/edit/form.html$ index.php?posts=edit&id=$1 [L]	
+
+	  	# ROUTE DE MODIFICATION D'UN POST: UPDATE
+		# 	PATTERN: /posts/id/slug-du-post/edit/update.html
+		# 	CTRL: ???
+		# 	ACTION: ???
+		# 	PAS DE TITLE CAR REDIRECTION VERS LA PAGE DE DETAILS DU POST
+			RewriteRule ^posts/([0-9]+)/[a-z0-9-]+/edit/update.html$ index.php?posts=update&id=$1 [L]	
+
+			
+
 # ------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
-RewriteRule ^(.*)$ index.php [L]
+# RewriteRule ^(.*)$ index.php [L]

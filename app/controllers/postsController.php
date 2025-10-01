@@ -40,7 +40,7 @@ function addFormAction(PDO $conn){
 function insertAction(PDO $conn, array $data){
     include_once "../app/models/postsModel.php";
     $reponse = PostsModel\insert($conn, $data);
-     header('location:' .PUBLIC_BASE_URL. 'posts');
+     header('Location:' .PUBLIC_BASE_URL. 'posts');
 
 
 }
@@ -62,4 +62,10 @@ function editFormAction(PDO $conn, int $id){
     include "../app/views/posts/editForm.php";
     $content = ob_get_clean();
 
+}
+
+function updateAction(PDO $conn, int $id, array $data){
+    include_once "../app/models/postsModel.php";
+    $response = PostsModel\updateOneById($conn, $id, $data);
+    header('Location: '.PUBLIC_BASE_URL.'posts/'.$id.'/'.\Core\Helpers\slugify($data['title']).'.html');
 }

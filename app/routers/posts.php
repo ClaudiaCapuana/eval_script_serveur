@@ -26,4 +26,9 @@ switch ($_GET['posts']) :
     \App\Controllers\PostsController\editFormAction($conn,$_GET['id']);
         break;
 
+    case 'update':
+           
+    \App\Controllers\PostsController\updateAction($conn,$_GET['id'],$_POST);
+        break;
+
  default: PostsController\indexAction($conn); break; endswitch;
